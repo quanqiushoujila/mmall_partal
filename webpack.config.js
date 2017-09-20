@@ -1,8 +1,8 @@
 /*
-* @Author: Rosen
-* @Date:   2017-05-08 15:28:19
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-30 16:50:46
+* @Author: kai
+* @Date:   2017-08-09 15:43:54
+* @Last Modified by:   kai
+* @Last Modified time: 2017-09-20 09:54:31
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -25,8 +25,8 @@ var getHtmlConfig = function(name, title){
 // webpack config
 var config = {
     entry: {
-        'common'            : ['./src/page/common/index.js']
-        // 'index'             : ['./src/page/index/index.js'],
+        'common'            : ['./src/page/common/index.js'],
+        'index'             : ['./src/page/index/index.js']
         // 'list'              : ['./src/page/list/index.js'],
         // 'detail'            : ['./src/page/detail/index.js'],
         // 'cart'              : ['./src/page/cart/index.js'],
@@ -48,9 +48,10 @@ var config = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
-            { test: /\.string$/, loader: 'html-loader'}
+            {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
+            {test: /\.scss$/,loader: ExtractTextPlugin.extract("style", 'css!sass')},
+            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=images/[name].[ext]' },
+            {test: /\.string$/, loader: 'html-loader'}
         ]
     },
     resolve : {
