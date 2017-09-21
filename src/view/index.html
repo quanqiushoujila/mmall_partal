@@ -5,8 +5,9 @@
 	<title><%= htmlWebpackPlugin.options.title%>- happymmall电商平台</title>
 </head>
 <body>
-	<div class="w"> <a href="#">111</a>
-		<%= require('html-loader!./layout/nav-simple.html')%>	
+	<%= require('html-loader!./layout/nav-simple.html')%>
+	<%= require('html-loader!./layout/head.html')%>
+	<div class="w"> 
 	</div>
 	<%= require('html-loader!./layout/foot.html')%>
 </body>
