@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="#" url="">aaa</a>
+	<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+	<script>
+		// window.parent.test()
+		$(function() {
+			$('a').click(function() {
+				parent.test('a')
+			})
+		})
+	</script>
+</body>
+</html>
