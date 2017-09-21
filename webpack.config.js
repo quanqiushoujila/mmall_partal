@@ -2,11 +2,13 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-09-20 09:54:31
+* @Last Modified time: 2017-09-21 17:20:38
 */
+// var path                = require('path')
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
+var OptimizeCSSPlugin   = require('optimize-css-assets-webpack-plugin');
 
 // 环境变量配置，dev / online
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
@@ -20,8 +22,18 @@ var getHtmlConfig = function(name, title){
         inject      : true,
         hash        : true,
         chunks      : ['common', name]
+        /*minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true
+        },*/
     };
 };
+
+/*function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}*/
+
 // webpack config
 var config = {
     entry: {
@@ -53,6 +65,17 @@ var config = {
             {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=images/[name].[ext]' },
             {test: /\.string$/, loader: 'html-loader'}
         ]
+        /*rules: [
+          {
+            test: /\.(js|html)$/,
+            loader: 'eslint-loader',
+            enforce: 'pre',
+            include: [resolve('src'), resolve('test')],
+            options: {
+              formatter: require('eslint-friendly-formatter')
+            }
+          }
+        ]*/
     },
     resolve : {
         alias : {
@@ -71,6 +94,18 @@ var config = {
         }),
         // 把css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
+        // css压缩
+       /* new OptimizeCSSPlugin({
+          cssProcessorOptions: {
+            safe: true
+          }
+        }),*/
+        // js压缩
+        /*new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        }),*/
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页'))
         // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
