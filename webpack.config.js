@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-09-21 17:20:38
+* @Last Modified time: 2017-09-21 17:31:06
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -86,26 +86,34 @@ var config = {
             image           : __dirname + '/src/image'
         }
     },
+    postcss: [
+      require('autoprefixer') //调用autoprefixer插件,加入各个浏览器的前缀
+    ],
     plugins: [
         // 独立通用模块到js/base.js
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common',
             filename : 'js/base.js'
         }),
+
         // 把css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
+
         // css压缩
        /* new OptimizeCSSPlugin({
           cssProcessorOptions: {
             safe: true
           }
         }),*/
+
         // js压缩
         /*new webpack.optimize.UglifyJsPlugin({
           compress: {
             warnings: false
           }
         }),*/
+        // 热加载
+        new webpack.HotModuleReplacementPlugin(),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页'))
         // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),

@@ -16,6 +16,7 @@
   "author": "Rosen",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^7.1.4",
     "css-loader": "^0.28.1",
     "eslint": "^4.7.1",
     "eslint-config-standard": "^10.2.1",
