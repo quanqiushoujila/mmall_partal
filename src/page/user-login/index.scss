@@ -1,0 +1,93 @@
+/*
+* @Author: kai
+* @Date:   2017-10-23 16:27:43
+* @Last Modified by:   kai
+* @Last Modified time: 2017-10-23 16:53:00
+*/
+.user-wrap {
+  padding: 40px 0;
+  background-color: #e72955;
+  .user-con {
+    margin: 0 auto;
+    width: 400px;
+    background-color: #fff;
+    .user-title {
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #666;
+    }
+    .user-box {
+      padding: 40px 20px 20px;
+      position: relative;
+    }
+    .err-item {
+      position: absolute;
+      top: 6px;
+      left: 20px;
+      right: 20px;
+      padding: 4px 0 4px 40px;
+      border: 1px solid red;
+      background: #fde9e9;
+      color: red;
+      font-size: 14px;
+      display: none;
+      .err-icon {
+        position: absolute;
+        font-size: 14px;
+        left: 14px;
+        top: 50%;
+        margin-top: -7px;
+      }
+    }
+    .user-item {
+      position: relative;
+      border: 1px solid #bdbdbd;
+      margin-bottom: 20px;
+      .user-label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        line-height: 36px;
+        background: #f3f3f3;
+        font-size: 18px;
+        color: #d3d3d3;
+        text-align: center;
+        border-right: 1px solid #bdbdbd;
+      }
+      .user-content {
+        padding: 10px 0 10px 50px;
+        width: 308px;
+        height: 18px;
+        line-height: 18px;
+        font-size: 15px;
+        color: #333;
+        border: none;
+        outline: none;
+      }
+    }
+    .btn-submit {
+      display: block;
+      padding: 6px 0;
+      width: 100%;
+      text-align: center;
+      background: #e4393c;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .link-item {
+      margin-top: 15px;
+      text-align: right;
+      color: #666;
+      font-size: 12px;
+    }
+    .link {
+      padding: 0 5px;
+    }
+  }
+}

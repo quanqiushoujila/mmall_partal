@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-10-23 13:54:44
+* @Last Modified time: 2017-10-23 16:27:06
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -42,7 +42,7 @@ var config = {
         // 'list'              : ['./src/page/list/index.js'],
         // 'detail'            : ['./src/page/detail/index.js'],
         // 'cart'              : ['./src/page/cart/index.js'],
-        // 'user-login'        : ['./src/page/user-login/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js'],
         // 'user-register'     : ['./src/page/user-register/index.js'],
         // 'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
         // 'user-center'       : ['./src/page/user-center/index.js'],
@@ -121,7 +121,7 @@ var config = {
         // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
-        // new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
