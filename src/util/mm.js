@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-09-20 10:47:09
 * @Last Modified by:   kai
-* @Last Modified time: 2017-09-21 11:04:01
+* @Last Modified time: 2017-10-23 20:49:05
 */
 'use strict'
 
@@ -21,16 +21,16 @@ var _mm = {
       dataType:   param.dataType  || 'json',
       data:       param.data      || '',
       type:       param.type      || 'get',
+      crossDomain: true,
       success:    function (res) {
-        if (Config.SUCCESS === res.data) {
-          typeof param.success === 'function' && param.success(res.data, res.msg);
+        if (Config.status.SUCCESS === res.status) {
+          typeof param.success === 'function' && param.success(res.status, res.msg);
 
-        } else if (Config.NEED_LOGIN === res.data){
+        } else if (Config.status.NEED_LOGIN === res.status){
           _this.doLogin();
 
-        } else if (Config.ERROR === res.data) {
-          typeof param.error === 'funciton' && param.error(res.msg);
-
+        } else if (Config.status.ERROR === res.status) {
+          typeof param.error === 'function' && param.error(res.msg);
         }
       },
       error:    function (err) {
