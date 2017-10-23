@@ -2,8 +2,14 @@
 * @Author: kai
 * @Date:   2017-09-21 11:20:26
 * @Last Modified by:   kai
-* @Last Modified time: 2017-09-21 20:57:18
+* @Last Modified time: 2017-10-23 14:07:55
 */
+// 初始化部分样式
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 // 全局样式
 // 定宽布局
@@ -27,7 +33,7 @@
 }
 
 .link:hover {
-  color: #e80012;
+  color: #c60023;
 }
 
 .link-text {

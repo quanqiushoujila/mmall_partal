@@ -1,0 +1,26 @@
+/*
+* @Author: kai
+* @Date:   2017-10-13 13:41:23
+* @Last Modified by:   kai
+* @Last Modified time: 2017-10-13 13:58:35
+*/
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  .links {
+    margin: 20px 0;
+    .link {
+      padding: 10px;
+      color: #666;
+      &:hover {
+        color: #666;
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyright {
+    margin: 10px 0;
+    color: #999;
+  }
+}

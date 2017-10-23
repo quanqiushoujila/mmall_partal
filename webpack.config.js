@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-09-21 17:31:06
+* @Last Modified time: 2017-10-23 13:54:44
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -38,7 +38,7 @@ var getHtmlConfig = function(name, title){
 var config = {
     entry: {
         'common'            : ['./src/page/common/index.js'],
-        'index'             : ['./src/page/index/index.js']
+        'index'             : ['./src/page/index/index.js'],
         // 'list'              : ['./src/page/list/index.js'],
         // 'detail'            : ['./src/page/detail/index.js'],
         // 'cart'              : ['./src/page/cart/index.js'],
@@ -48,7 +48,7 @@ var config = {
         // 'user-center'       : ['./src/page/user-center/index.js'],
         // 'user-center-update': ['./src/page/user-center-update/index.js'],
         // 'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
-        // 'result'            : ['./src/page/result/index.js'],
+        'result'            : ['./src/page/result/index.js']
     },
     output: {
         path: './dist',
@@ -112,10 +112,12 @@ var config = {
             warnings: false
           }
         }),*/
+
         // 热加载
         new webpack.HotModuleReplacementPlugin(),
+
         // html模板的处理
-        new HtmlWebpackPlugin(getHtmlConfig('index', '首页'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
@@ -125,7 +127,9 @@ var config = {
         // new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
-        // new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        
+        new webpack.NoErrorsPlugin()
     ]
 };
 

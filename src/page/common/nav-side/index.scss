@@ -1,0 +1,20 @@
+/*
+* @Author: kai
+* @Date:   2017-10-23 11:02:33
+* @Last Modified by:   kai
+* @Last Modified time: 2017-10-23 11:25:06
+*/
+
+.nav-side {
+  float: left;
+  width: 130px;
+  .nav-item{
+    font-size: 14px;
+    .link {
+      line-height: 25px;
+    }
+    &.active a{
+      color: #c60023;
+    }
+  }
+}
