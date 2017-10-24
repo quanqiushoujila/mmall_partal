@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-09-20 10:47:09
 * @Last Modified by:   kai
-* @Last Modified time: 2017-10-23 20:49:05
+* @Last Modified time: 2017-10-24 19:35:53
 */
 'use strict'
 
@@ -24,7 +24,7 @@ var _mm = {
       crossDomain: true,
       success:    function (res) {
         if (Config.status.SUCCESS === res.status) {
-          typeof param.success === 'function' && param.success(res.status, res.msg);
+          typeof param.success === 'function' && param.success(res);
 
         } else if (Config.status.NEED_LOGIN === res.status){
           _this.doLogin();

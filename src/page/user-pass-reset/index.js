@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-10-24 14:17:25
 * @Last Modified by:   kai
-* @Last Modified time: 2017-10-24 15:44:01
+* @Last Modified time: 2017-10-24 20:02:46
 */
 'use strict';
 
@@ -70,13 +70,13 @@ var page = {
 
     // 第三步 新密码提交
     $('#submit-password').click(function () {
-      var password = $.trim($("#password").val());
+      var passwordNewew = $.trim($("#password").val());
 
       if (password) {
-        _user.checkAnswer({
+        _user.resetPassword({
           forgetToken: _this.data.token,
           username: _this.data.username,
-          passwordNew: password
+          passwordNew: passwordNewew
         }, function (res) {
           window.location.href = './index.html';
         }, function (err) {
@@ -111,8 +111,7 @@ var page = {
   loadStepPassword: function () {
     // 清除错误提示
     _notice.formError.hide();
-
-    $('.step-question').hide().sibling('.step-passsword').show();
+    $('.step-question').hide().siblings('.step-password').show();
   }
 }
 

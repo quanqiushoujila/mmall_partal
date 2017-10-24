@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-10-23 18:53:10
  * @Last Modified by:   kai
- * @Last Modified time: 2017-10-23 19:46:01
+ * @Last Modified time: 2017-10-24 21:39:28
  */
 
 'use strict';
@@ -95,7 +95,7 @@ var _user = {
   // 获取用户信息
   getUserInfo: function(resolve, reject) {
     _mm.request({
-      url: _mm.getServerUrl('/user/get_information.do'),
+      url: _mm.getServerUrl('/user/get_user_info.do'),
       type: 'POST',
       success: resolve,
       error: reject

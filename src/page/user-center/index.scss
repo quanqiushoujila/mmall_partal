@@ -1,0 +1,28 @@
+/*
+* @Author: kai
+* @Date:   2017-10-24 20:37:14
+* @Last Modified by:   kai
+* @Last Modified time: 2017-10-24 21:26:44
+*/
+
+.right-con {
+  .user-info {
+    padding: 0 10px;
+    font-size: 14px;
+    color: #666;
+    .text-label {
+      display: inline-block;
+      width: 60px;
+      padding-right: 5px;
+      text-align: right;
+    }
+    .text {
+      margin-right: 20px;
+      height: 30px;
+      line-height: 30px;
+    }
+    .btn-mini {
+      margin-left: 65px;
+    }
+  }
+}

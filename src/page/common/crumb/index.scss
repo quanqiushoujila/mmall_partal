@@ -1,0 +1,20 @@
+/*
+* @Author: kai
+* @Date:   2017-10-24 20:41:21
+* @Last Modified by:   kai
+* @Last Modified time: 2017-10-24 20:56:34
+*/
+.crumb {
+  margin-bottom: 15px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  background: #eee;
+  color: #888;
+  border-top: 2px solid #c60023;
+  font-size: 14px;
+  .crumb-item {
+    color: #888;
+    text-decoration: none;
+  }
+}
