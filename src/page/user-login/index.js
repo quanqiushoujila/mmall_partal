@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-10-23 16:27:31
  * @Last Modified by:   kai
- * @Last Modified time: 2017-10-23 20:49:39
+ * @Last Modified time: 2017-10-24 09:46:56
  */
 'use strict';
 
@@ -10,17 +10,8 @@ require('./index.scss');
 require('page/common/nav-simple/index.js');
 var _mm = require('util/mm.js');
 var _user = require('service/user-service.js');
+var _notice = require('js/notice.js');
 
-// 表单错误提示
-var formError = {
-  show: function (errMsg) {
-    $('.err-item').show().find('.err-msg').text(errMsg);
-  },
-
-  hide: function () {
-    $('.err-item').hide().find('.err-msg').text('');
-  }
-}
 
 // 逻辑部分
 var page = {
@@ -30,7 +21,7 @@ var page = {
   // 登录事件绑定
   bindEvent: function () {
     var _this = this;
-    $('.btn-submit').click(function () {
+    $('#submit').click(function () {
       _this.submit();
     });
 
@@ -55,10 +46,10 @@ var page = {
       _user.login(formData, function (res) {
         window.location.href = _mm.getUrlParam('redirect') || './index.html';
       }, function (err) {
-        formError.show(err)
+        _notice.formError.show(err);
       })
     } else {
-      formError.show(validateResult.msg);
+      _notice.formError.show(validateResult.msg);
     }
 
   },

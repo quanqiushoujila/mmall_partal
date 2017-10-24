@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-10-23 20:58:45
+* @Last Modified time: 2017-10-24 09:15:20
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -83,7 +83,8 @@ var config = {
             util            : __dirname + '/src/util',
             page            : __dirname + '/src/page',
             service         : __dirname + '/src/service',
-            image           : __dirname + '/src/image'
+            image           : __dirname + '/src/image',
+            js              : __dirname + '/src/js'
         }
     },
     postcss: [
